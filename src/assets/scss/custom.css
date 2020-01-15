@@ -230,3 +230,6 @@
   .page3 .game {
 	margin-top: 22px;
   }
+  html {
+    font-size: 12px !important;
+  }

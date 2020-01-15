@@ -44,8 +44,8 @@
                     <hr/>
                   </div>      
                   <v-card-actions class="pr-3 pb-3 pt-5">
-                    <v-btn class="btn-facebook" color="primary" @click="loginWithFacebook" dark large><v-icon>mdi-facebook-box</v-icon>| Facebook</v-btn>
-                    <v-btn class="btn-google" color="error" @click="loginWithGoogle" dark large><v-icon>mdi-google</v-icon>+ | Google</v-btn>
+                    <v-btn class="btn-facebook" color="primary" @click="loginWithFacebook" dark><v-icon>mdi-facebook-box</v-icon>| Facebook</v-btn>
+                    <v-btn class="btn-google" color="error" @click="loginWithGoogle" dark><v-icon>mdi-google</v-icon>+ | Google</v-btn>
                   </v-card-actions>        
                 </div>
                 <div v-if="currentPage == 2" class="page2">
