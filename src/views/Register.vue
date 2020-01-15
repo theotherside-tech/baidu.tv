@@ -88,7 +88,7 @@
                   </div>
                 </div>
                 <div v-if="currentPage == 3" class="page3">
-                  <div class="col-6 m-auto">
+                  <div class="col-6">
                     <p>EACH KID INTERESTS</p>
                     <div class="row">
                       <div class="col-6 text-center">
