@@ -9,12 +9,12 @@
       </v-container>
       <v-container>
         <div class="row">
-          <div class="col-md-12 img-baidu">
+          <div class="col-sm-12 img-baidu">
             <img src="../assets/baidu.png" alt="img"></img>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-sm-12">
             <h2>TERMA AND CONDITIONS</h2>
             <p>
               Baidu TV allows you to limit the screen time of your kids by providing them with a tablet applications that has your kid’s tablet “run out of battery” whenever you need them to stop watching.

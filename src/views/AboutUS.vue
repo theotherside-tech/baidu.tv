@@ -14,7 +14,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-sm-6">
             <h2>ABOUT US</h2>
             <p>
               Baidu TV allows you to limit the screen time of your kids by providing them with a tablet applications that has your kid’s tablet “run out of battery” whenever you need them to stop watching.
@@ -32,7 +32,7 @@
             </p>
             <br />
           </div>
-          <div class="col-md-6">
+          <div class="col-sm-6 center-img">
             <img class="img-aboutus" src="../assets/aboutus.png" alt="img"></img>
           </div>
         </div>
