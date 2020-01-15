@@ -4,7 +4,6 @@ const cors = require("cors");
 const morgan = require("morgan");
 const mysql = require("mysql");
 const config = require("../config");
-import './custom.scss'
 const app = express();
 
 const connection = mysql.createConnection({

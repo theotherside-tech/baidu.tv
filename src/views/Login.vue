@@ -3,7 +3,7 @@
       <v-content>
       <v-container class="fill-height" fluid>
         <v-row align="center" justify="center">
-          <v-col class="login-div" cols="12" sm="9" md="7" lg="4">
+          <v-col class="login-div" cols="12" sm="9" md="7" lg="6">
             <div class="row">
               <v-form ref="loginForm" class="col-8">
                 <div class="text-center">
@@ -18,6 +18,7 @@
                   <p>Please Enter the registration Email Address</p>
                 </div>
                 <v-text-field
+                  class="form-control"
                   label="Email..."
                   name="email"
                   prepend-icon="email"
