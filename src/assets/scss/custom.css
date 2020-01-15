@@ -113,7 +113,9 @@
 	color: black !important;
   } */
   .theme--light.v-input:not(.v-input--is-disabled) input, .theme--light.v-input:not(.v-input--is-disabled) textarea {
-	color: black !important;
+  color: black !important;
+  font-size: 12px;
+  margin-top: 5px;
   }
   .text-center p,
   .page2 p,
@@ -154,7 +156,7 @@
 	width: 50%;
   }
   .v-text-field .v-input__slot {
-	background-color: rgb(232, 240, 254);
+	background-color: rgb(245, 245, 245);
 	border: 2px #8aa8f2 solid;
 	border-radius: 5px !important;
   padding: 5px;
@@ -223,8 +225,13 @@
 	width: 50%;
   }
   .v-input--selection-controls__input + .v-label {
-	color: black !important;
+  color: black !important;
+  font-size: 12px !important;
   }
+  .v-input--selection-controls__input {
+    margin-right: 0px !important;
+  }
+  .v-input--selection-controls__input 
   .page3 .m-auto {
 	margin: auto;
   }

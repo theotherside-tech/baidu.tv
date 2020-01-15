@@ -72,6 +72,8 @@
                       v-model.trim="user.age"
                       type="number"
                       autofocus
+                      min=0
+                      max=100
                     ></v-text-field>
                     <p>Gender</p>
                     <div class="row">
