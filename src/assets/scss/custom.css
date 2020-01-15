@@ -13,7 +13,7 @@
   }
   
   #logobar {
-	height: 150px;
+	height: 100px;
 	background-image: linear-gradient(#dfec15, #fafd49, #dfec15);
   }
   
@@ -29,13 +29,13 @@
   }
   
   .v-toolbar__content {
-	height: 48px !important;
+	height: 30px !important;
 	background-image: linear-gradient(#2cec15, #32c538, #2cec15);
   }
   
   .logo {
-	height: 150px;
-	width: 150px;
+	height: 100px;
+	width: 100px;
   }
   
   .v-content {
@@ -47,7 +47,7 @@
 	background-image: linear-gradient(#2cec15, #228526, #2cec15);
   }
   .v-toolbar{
-	  height:48px !important;
+	  height:30px !important;
   }
   .img-aboutus {
 	height: 90%;
@@ -73,7 +73,7 @@
 	font-family: fantasy;
 	font-weight: bold;
 	color: honeydew;
-	font-size: 30px !important;
+	font-size: 20px !important;
 	width: 200px;
 	padding-top: 10px;
   }
@@ -81,8 +81,7 @@
 	font-family: fantasy!important;
 	font-weight: bold!important;
 	color: honeydew!important;
-	font-size: 15px!important;
-	width: 120px;
+	font-size: 12px!important;
 	padding-top: 10px;
   }
   .login-layout {
