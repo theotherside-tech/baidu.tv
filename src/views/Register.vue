@@ -2,7 +2,7 @@
   <v-layout class="login-layout"> <!-- :style="{backgroundImage: 'url(' + background + ')'}"> -->
       <v-content>
       <v-container class="fill-height" fluid>
-        <v-row align="center" justify="center">
+        <v-row class="yellow-div" align="center" justify="center">
           <v-col class="register-div" cols="12" sm="9" md="7" lg="6">
             <div class="row">
               <v-form ref="loginForm" class="col-10">
@@ -88,7 +88,7 @@
                   </div>
                 </div>
                 <div v-if="currentPage == 3" class="page3">
-                  <div class="col-6">
+                  <div class="col-sm-6">
                     <p>EACH KID INTERESTS</p>
                     <div class="row">
                       <div class="col-6 text-center">

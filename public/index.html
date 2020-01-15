@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="/logo.png"/>
     <title>BAIDU.TV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900%7CRoboto+Mono:500%7CMaterial+Icons" media="all">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
@@ -17,4 +18,14 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <script>
+    function myFunction() {      
+      var x = document.getElementById("nav-menu");
+      if (x.className === "v-sheet v-sheet--tile theme--light v-toolbar") {
+        x.className += " show-menu";
+      } else {
+        x.className = "v-sheet v-sheet--tile theme--light v-toolbar";
+      }
+    }
+    </script>
 </html>
