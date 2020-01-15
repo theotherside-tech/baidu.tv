@@ -199,7 +199,8 @@
 	font-size: 15px;
   }
   .main-form {
-	margin: auto;
+  margin: auto;
+  padding: 0 !important;
   }
   .border-form {
 	border-right: #228526 1px solid;  
@@ -228,8 +229,11 @@
 	margin: auto;
   }
   .page3 .game {
-	margin-top: 22px;
+	margin-top: 20px;
   }
   html {
     font-size: 12px !important;
+  }
+  .v-btn__content {
+    padding-top: 7px !important;
   }

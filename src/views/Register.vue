@@ -11,7 +11,7 @@
                     <img :src="require('../assets/logo.png')"/>
                   </v-avatar>
                 </div>
-                <div class="text-center mt-5 mb-5">
+                <div class="text-center">
                   <h1>Register</h1>
                 </div>
                 <div v-if="currentPage == 1" class="page1">                  
