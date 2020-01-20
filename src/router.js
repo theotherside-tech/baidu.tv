@@ -14,8 +14,16 @@ export default new Router({
   routes: [
     {
       path: "/",
+      name: "aboutUS",
+      component: AboutUS
+    },
+    {
+      path: "/baiduControl",
       name: "baiduControl",
-      component: BaiduControl
+      component: BaiduControl,
+      meta: {
+        permission: 2
+      }
     },
     {
       path: "/legal",

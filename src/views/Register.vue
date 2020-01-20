@@ -5,7 +5,7 @@
         <v-row class="yellow-div" align="center" justify="center">
           <v-col class="register-div" cols="12" sm="9" md="7" lg="6">
             <div class="row">
-              <v-form ref="loginForm" class="col-10">
+              <v-form ref="registerForm" class="col-10">
                 <div class="text-center">
                   <v-avatar size="100">
                     <img :src="require('../assets/logo.png')"/>
@@ -27,6 +27,7 @@
                     :Xrules="[v => !!v || 'Email is required', v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid']"
                     type="text"
                     autofocus
+                    required
                   ></v-text-field>
                   <v-text-field
                     id="password"
@@ -36,6 +37,7 @@
                     v-model.trim="user.password"
                     :rules="[v => !!v || 'Password is required']"
                     type="password"
+                    required
                   ></v-text-field>
                   </div>
                   <div class="or-div">
@@ -53,7 +55,7 @@
                     <v-text-field
                       label="Your Name..."
                       name="name"
-                      v-model.trim="user.name"
+                      v-model.trim="user.username"
                       type="text"
                       autofocus
                     ></v-text-field>
@@ -91,11 +93,11 @@
                   <div class="col-sm-6">
                     <p>EACH KID INTERESTS</p>
                     <div class="row">
-                      <div class="col-6 text-center">
+                      <div class="col-4 text-center interest" v-bind:class="{' selected':selectedCartoon, '':!selectedCartoon}" @click="selectCartoon">
                         <img class="cartoon" :src="require('../assets/funny-img.png')"/>
                         <p>Cartoons</p>
                       </div>
-                      <div class="col-6 text-center">
+                      <div class="col-4 text-center interest" v-bind:class="{' selected':selectedGame, '':!selectedGame}" @click="selectGame">
                         <img class="game" :src="require('../assets/game-img.png')"/>
                         <p>Games</p>
                       </div>
@@ -123,15 +125,20 @@ export default {
       user: {
         email: "",
         password: "",
-        name: "",
+        username: "",
         kidName: "",
-        age: ""
+        age: "",
+        gender: "",
+        morekids: "",
+        interest: 1
       },
       currentPage: 0,
       boySelect: false,
       girlSelect: false,
       boyMoreSelect: false,
       girlMoreSelect: false,
+      selectedCartoon: true,
+      selectedGame: false,
     }
   },
   mounted() {
@@ -144,7 +151,7 @@ export default {
   created() {
     this.user.email = "test@test.com";
     this.user.password = "123";
-    if (this.$refs.loginForm) this.$refs.loginForm.reset();
+    if (this.$refs.registerForm) this.$refs.registerForm.reset();
   },
   methods: {
     enterHandle(e) {
@@ -155,36 +162,100 @@ export default {
           this.loginHandle();
       }
     },
-    nextPage() {
+    nextPage() {      
+      if (this.currentPage == 1)
+      {        
+        if (this.user.email == "") {
+          this.$toast.error({
+            title: "Warning.",
+            message: 'Insert email.'
+          })
+          return;
+        }
+        if (this.user.password == "") {
+          this.$toast.error({
+            title: "Warning.",
+            message: 'Insert password.'
+          })
+          return;
+        }
+      } else if (this.currentPage == 2) {
+        if (this.user.username == "") {
+          this.$toast.error({
+            title: "Warning.",
+            message: 'Insert your name.'
+          })
+          return;
+        }
+        if (this.user.kidName == "") {
+          this.$toast.error({
+            title: "Warning.",
+            message: 'Insert your kid name.'
+          })
+          return;
+        }
+        if (this.user.age == "") {
+          this.$toast.error({
+            title: "Warning.",
+            message: 'Insert your age.'
+          })
+          return;
+        }
+        if (!this.boySelect && !this.girlSelect) {
+          this.$toast.error({
+            title: "Warning.",
+            message: 'Select gender.'
+          })
+          return;
+        }
+        if (this.boySelect) this.user.gender = 1;
+        if (this.girlSelect) this.user.gender = 2;
+        if (this.boyMoreSelect) this.user.morekids = 1;
+        if (this.girlMoreSelect) this.user.morekids = 2;
+        if (!this.girlMoreSelect && !this.boyMoreSelect) this.user.morekids = 3;
+      }      
       if (this.currentPage < 3)
         this.currentPage+=1;
     },
-    loginHandle() {      
-      // if (this.$refs.loginForm.validate()) {
-      //   this.$http.post('/users/login', this.user).then(res => {
-      //     if (res.data.error) {
-      //       this.$toast.error({
-      //         title: "Warning.",
-      //         message: res.data.error
-      //       })
-      //     } else {
-      //       res.data.user.permission = 2;
-      //       this.$store.commit("SET_USERDATA", res.data);
-      //       setTimeout(() => {
-      //         this.$router.push({name: "home"})
-      //       }, 100);
-      //     }
-      //   }, err => {
-      //     this.$toast.error({
-      //       title: "Warning.",
-      //       message: 'Server is not running'
-      //     })
-      //   })
-      // }
+    loginHandle() {
+      if (this.$refs.registerForm.validate()) {
+        this.$http.post('/users/register', this.user).then(res => {
+          if (res.data.error) {
+            this.$toast.error({
+              title: "Warning.",
+              message: res.data.error
+            })
+          } else {
+            this.$store.commit("SET_USERDATA", res.data);
+            setTimeout(() => {
+              this.$router.push({name: "baiduControl"})
+            }, 100);
+            this.$toast.success({
+              title: "Success.",
+              message: 'Successfully registered.'
+            })
+          }
+        }, err => {
+          this.$toast.error({
+            title: "Warning.",
+            message: 'Server is not running'
+          })
+        })
+      }
     },
     loginWithFacebook() {
     },
     loginWithGoogle() {
+    },
+    selectCartoon() {
+      this.user.interest = 1;
+      this.selectedCartoon = true;
+      this.selectedGame = false;
+    },
+    selectGame() {
+      this.user.interest = 2;
+      this.selectedCartoon = false;
+      this.selectedGame = true;
     }
   }
 };

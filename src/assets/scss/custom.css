@@ -250,6 +250,19 @@ html {
 .yellow-div {
   margin: auto !important;
 }
+.interest { 
+  padding: 5px !important;
+}
+.interest p {
+  margin: 0 !important
+}
+.selected {
+  border: 5px solid #05f405;
+  border-radius: 10px;
+}
+.v-footer small {
+  color:yellow;
+}
 @media only screen and (max-width: 600px) {
   #logobar {
     /* display: none; */
